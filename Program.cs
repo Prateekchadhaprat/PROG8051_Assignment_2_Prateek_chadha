@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PROG8051_Assignment_2_Prateek_chadha
 
-{
+/*{
     internal class Program
     {
         static void displayBoard(string[,] Board)
@@ -203,87 +203,59 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             turn++;
             return turn;
         }
+*/
+//static bool checkWinner(string[,] Board)
+//{
 
-        //static bool checkWinner(string[,] Board)
-        //{
-
-        //}
-
-                  // Main Method 
-            static public void Main(string[] args)
-            {
-                Console.WriteLine("\nGem Hunters\n");
-
-                
-                Console.Write("Please enter player 1 name : ");
-            string player1Name = Console.ReadLine() ?? GameElement.PLAYER_1_ALIAS;  
+//}
+{
+    internal class Program
+    {
+        // Main Method 
+        static public void Main(string[] args)
+        {
+            Console.WriteLine("\nGem Hunters\n");
 
 
-           
+            Console.Write("Please enter player 1 name : ");
+            string player1Name = Console.ReadLine() ?? GameElement.PLAYER_1_ALIAS;
+
             Console.Write("\nPlease enter player 2 name : ");
-                string player2Name = Console.ReadLine() ?? GameElement.PLAYER_2_ALIAS; 
+            string player2Name = Console.ReadLine() ?? GameElement.PLAYER_2_ALIAS;
 
-               
-                Game game = new Game(player1Name, player2Name);
-                game.Start();
 
-                Console.WriteLine("\nThankS for playing the game.");
-            }
+            Game game = new Game(player1Name, player2Name);
+            game.Start();
+
+            Console.WriteLine("\nThankS for playing the game.");
         }
-
-        //{
-        //    // Board
-
-        //    string[,] Board = { { "-", "-", "-", "-", "-", "-", }, { "-", "-", "-", "-", "-", "-", }, { "-", "-", "-", "-", "-", "-", }, { "-", "-", "-", "-", "-", "-", }, { "-", "-", "-", "-", "-", "-", }, { "-", "-", "-", "-", "-", "-", } };
-
-        //    // Display the board
-        //    displayBoard(Board);
-
-
-
-        //    int turn = 0;
-        //    // User inputs
-        //    for (int n = 0; n < 8; n++)
-        //    {
-
-        //        getTurn(turn);
-        //        string userposition;
-        //        if (turn % 2 == 0)
-        //        {
-        //            Console.WriteLine("Enter your P1 Position: ");
-        //            userposition = Console.ReadLine();
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Enter your P2 Position: ");
-        //            userposition = Console.ReadLine();
-        //        }
-
-
-        //        string pos = GetPosition(userposition);
-
-        //        int r = Convert.ToInt32(pos.Split()[0]);
-        //        int c = Convert.ToInt32(pos.Split()[1]);
-        //        if (Board[r, c] != "-")
-        //        {
-        //            continue;
-        //        }
-
-        //        turn = userinput(Board, r, c, turn);
-        //        displayBoard(Board);
-
-
-
-        //        //bool winner = checkWinner(Board);
-        //        //if (winner)
-        //        //{
-        //        //    Console.WriteLine("Game ended");
-        //        //    break;
-        //        //}
-
-
-
-        //    }
-        //}
     }
+
+   
+
+    //        string pos = GetPosition(userposition);
+
+    //        int r = Convert.ToInt32(pos.Split()[0]);
+    //        int c = Convert.ToInt32(pos.Split()[1]);
+    //        if (Board[r, c] != "-")
+    //        {
+    //            continue;
+    //        }
+
+    //        turn = userinput(Board, r, c, turn);
+    //        displayBoard(Board);
+
+
+
+    //        //bool winner = checkWinner(Board);
+    //        //if (winner)
+    //        //{
+    //        //    Console.WriteLine("Game ended");
+    //        //    break;
+    //        //}
+
+
+
+    //    }
+    //}
 }

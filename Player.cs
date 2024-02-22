@@ -8,5 +8,6 @@ namespace PROG8051_Assignment_2_Prateek_chadha
 {
     public class Player
     {
-       
+        
+    }
 }
