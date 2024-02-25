@@ -11,9 +11,9 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         public Player CurrentPlayerTurn { get; set; }
         public int TotalTurns { get; set; }
 
-        /// <summary>
+        
         /// Constructor initializes the game
-        /// </summary>
+       
         /// <param name="player1Name">Player 1's actual name</param>
         /// <param name="player2Name">Player 2's actual name</param>
         public Game(string player1Name, string player2Name)
@@ -34,9 +34,9 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             Board = new Board();
         }
 
-        /// <summary>
+        
         /// Method to start the game
-        /// </summary>
+       
         public void Start()
         {
             // Display the initial game board
@@ -79,11 +79,10 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             AnnounceWinner();
         }
 
-        /// <summary>
+        
         /// Validate user input from console.
-        /// </summary>
-        /// <param name="userInput">Received input on console.</param>
-        /// <returns></returns>
+        
+        
         private bool IsValidUserInput(string userInput)
         {
             userInput = userInput.ToUpper();
@@ -102,9 +101,9 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             }
         }
 
-        /// <summary>
+        
         /// Method to switch turns between players
-        /// </summary>
+        
         public void SwitchTurn()
         {
             // Increment the total number of turns
@@ -123,15 +122,15 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             Console.Write($"\n{CurrentPlayerTurn.Name}'s turn({CurrentPlayerTurn.Alias}). Please enter (U-Up, D-Down, L-Left, R-Right): ");
         }
 
-        /// <summary>
+        
         /// Method to check if the game is over. The game ends if the total number of turns finished or if the total number of collected gems by both players.
-        /// </summary>
-        /// <returns>Returns true if the game is over, otherwise false.</returns>
+        
+        
         public bool IsGameOver() => TotalTurns == GameElement.TOTAL_PLAYER_TURNS || (Player1.GemCount + Player2.GemCount) == GameElement.TOTAL_GEM;
 
-        /// <summary>
+        
         /// Method to announce the winner
-        /// </summary>
+        
         public void AnnounceWinner()
         {
             Console.WriteLine("\n****** Game Over ******");
@@ -147,11 +146,11 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             }
             else if (Player1.GemCount > Player2.GemCount)
             {
-                Console.WriteLine($"\n{Player1.Name} is the winner!");
+                Console.WriteLine($"\nYay!!{Player1.Name} has hunt the maximum no. of gems and is the winner!");
             }
             else
             {
-                Console.WriteLine($"\n{Player2.Name} is the winner!");
+                Console.WriteLine($"\nYay!!{Player2.Name} has hunt the maximum no. of gems is the winner!");
             }
         }
     }

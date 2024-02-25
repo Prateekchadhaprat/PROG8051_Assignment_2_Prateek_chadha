@@ -214,20 +214,20 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         // Main Method 
         static public void Main(string[] args)
         {
-            Console.WriteLine("\nGem Hunters\n");
+            Console.WriteLine("\nGet ready to hunt Gems!!\n");
 
 
-            Console.Write("Please enter player 1 name : ");
+            Console.Write("Enter player 1 name : ");
             string player1Name = Console.ReadLine() ?? GameElement.PLAYER_1_ALIAS;
 
-            Console.Write("\nPlease enter player 2 name : ");
+            Console.Write("\nEnter player 2 name : ");
             string player2Name = Console.ReadLine() ?? GameElement.PLAYER_2_ALIAS;
 
 
             Game game = new Game(player1Name, player2Name);
             game.Start();
 
-            Console.WriteLine("\nThankS for playing the game.");
+            Console.WriteLine("\nThank you for playing the game.");
         }
     }
 

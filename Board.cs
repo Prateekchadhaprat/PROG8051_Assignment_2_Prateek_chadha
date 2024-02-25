@@ -143,7 +143,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             if (Grid[position.X, position.Y].Occupant == GameElement.GEM)
             {
                 player.GemCount++;
-                Console.WriteLine($"\nYeah! {player.Name} got a gem.");
+                Console.WriteLine($"\nYay! {player.Name} got a gem.");
             }
             Grid[position.X, position.Y].Occupant = player.Alias;
         }

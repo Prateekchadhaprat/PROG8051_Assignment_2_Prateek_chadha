@@ -52,7 +52,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
                     y = Math.Min(5, y + 1);
                     break;
                 default:
-                    Console.WriteLine("Invalid input. You miss your turn !!!");
+                    Console.WriteLine("Invalid input. You have missed your turn !!!");
                     break;
             }
 
