@@ -1,7 +1,7 @@
 ﻿using PROG8051_Assignment_2_Prateek_chadha;
 using System;
 
-namespace GemHunters
+namespace PROG8051_Assignment_2_Prateek_chadha
 {
     public class Game
     {

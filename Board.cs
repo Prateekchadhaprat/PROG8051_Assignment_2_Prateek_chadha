@@ -9,13 +9,13 @@ namespace PROG8051_Assignment_2_Prateek_chadha
     public class Board
     {
        
-        public Cell[,] Grid { get; set; }
+        public Cell[,] Grid { get; set; }// Represents the grid of cells
 
-        
+
         public Board()
         {
             
-            Grid = new Cell[6, 6];
+            Grid = new Cell[6, 6]; //Creating a 6 by 6 grid cells array
 
             
             for (int i = 0; i < 6; i++)
@@ -27,11 +27,11 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             }
 
             
-            Grid[0, 0] = new Cell(GameElement.PLAYER_1_ALIAS);
+            Grid[0, 0] = new Cell(GameElement.PLAYER_1_ALIAS); //// Setting Player 1 at (0, 0) and Player 2 at (5, 5)
             Grid[5, 5] = new Cell(GameElement.PLAYER_2_ALIAS);
 
             
-            PlaceGems();
+            PlaceGems(); // Setting up gems and obstacles
             PlaceObstacles();
         }
 
@@ -40,7 +40,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         {
             
             int totalGemsPlaced = 0;
-            Random random = new Random();
+            Random random = new Random(); // Setting random gems in the board using random function
             while (totalGemsPlaced != GameElement.TOTAL_GEM)
             {
                 int x = random.Next(0, 6);
@@ -62,7 +62,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         {
             
             int totalObstaclesPlaced = 0;
-            Random random = new Random();
+            Random random = new Random();// Placing obstacles randomly until all obstacles are placed on the board
             while (totalObstaclesPlaced != GameElement.TOTAL_OBSTACLE)
             {
                 
@@ -71,7 +71,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
 
                 Cell cell = Grid[x, y];
 
-                
+                // Condition If the cell is empty and not occupied by a player, place an obstacle
                 if (cell.Occupant == GameElement.EMPTY_SPACE && cell.Occupant != GameElement.PLAYER_1_ALIAS && cell.Occupant != GameElement.PLAYER_2_ALIAS)
                 {
                     Grid[x, y] = new Cell(GameElement.OBSTACLE);
@@ -83,7 +83,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         
         public void Display()
         {
-            Console.Write("\n");
+            Console.Write("\n"); // display the current state of the board
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 6; j++)
@@ -127,7 +127,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
             
             bool isValidMove = Grid[x, y].Occupant != GameElement.OBSTACLE && !Grid[x, y].Occupant.Contains('P');
 
-            if (isValidMove)
+            if (isValidMove) //Checking if the move is valid(not an obstacle)
             {
                 
                 Grid[position.X, position.Y].Occupant = GameElement.EMPTY_SPACE;
@@ -139,7 +139,7 @@ namespace PROG8051_Assignment_2_Prateek_chadha
         
         public void CollectGem(Player player)
         {
-            Position position = player.Position;
+            Position position = player.Position; //Checks and collects gem at the player's position
             if (Grid[position.X, position.Y].Occupant == GameElement.GEM)
             {
                 player.GemCount++;
